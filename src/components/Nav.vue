@@ -135,10 +135,6 @@
         }
       }
 
-      .logo logo-width logo-collapse-width i {
-        float: right;
-        margin-top: 10%;
-      }
       .logo-width {
         width: 230px;
 
