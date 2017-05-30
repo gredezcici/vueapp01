@@ -141,6 +141,7 @@
       }
       .logo-width {
         width: 230px;
+
       }
       .logo-collapse-width {
         width: 60px;
