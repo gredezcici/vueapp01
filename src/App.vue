@@ -1,15 +1,9 @@
 <template>
   <div id="app">
-
-
-    <el-row >
-      <el-col :span="4">
-        <sidebar></sidebar>
-      </el-col>
-
-
-    </el-row>
-
+    <transition name="fade"
+                mode="out-in">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
