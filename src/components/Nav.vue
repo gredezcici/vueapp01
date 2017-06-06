@@ -56,6 +56,7 @@
                  :class="$route.path==item.children[0].path?'is-active':''"
                  @click="$router.push(item.children[0].path)"><i :class="item.iconCls"></i></div>
           </li>
+
 </template>
 </li>
 </ul>
