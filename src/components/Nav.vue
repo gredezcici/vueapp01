@@ -35,6 +35,7 @@
             </el-menu-item>
           </template>
         </el-menu>
+
         <ul class="el-menu el-menu-vertical-demo collapsed" v-show="collapsed" ref="menuCollapsed">
           <li v-for="(item,index) in $router.options.routes" v-if="!item.hidden" class="el-submenu item">
             <template v-if="!item.leaf">
@@ -57,6 +58,7 @@
                  @click="$router.push(item.children[0].path)"><i :class="item.iconCls"></i></div>
           </li>
 
+
 </template>
 </li>
 </ul>
@@ -65,11 +67,11 @@
   <div class="grid-content bg-purple-light">
     <el-col :span="24" class="breadcrumb-container">
       <strong class="title">{{$route.name}}</strong>
-      <el-breadcrumb separator="/" class="breadcrumb-inner">
-        <el-breadcrumb-item v-for="item in $route.matched" :key="item.path">
-          {{ item.name }}
-        </el-breadcrumb-item>
-      </el-breadcrumb>
+      <!--<el-breadcrumb separator="/" class="breadcrumb-inner">-->
+      <!--<el-breadcrumb-item v-for="item in $route.matched" :key="item.path">-->
+      <!--{{ item.name }}-->
+      <!--</el-breadcrumb-item>-->
+      <!--</el-breadcrumb>-->
     </el-col>
     <el-col :span="24" class="content-wrapper">
       <transition name="fade" mode="out-in">
@@ -83,8 +85,18 @@
 </template>
 
 
-
 <script>
+  import axios from 'axios';
+  $(document).ready(function(){
+     console.log('jq');
+  });
+  axios({
+    method: 'get',
+    url: 'http://localhost:8080/ley-crm/select/mm',
+    responseType: 'json'
+  }).then(function (response) {
+    console.log(response.data);
+  });
   export default {
     data() {
       return {
